@@ -2,7 +2,5 @@ from flask import render_template, request, redirect, url_for, abort, flash, ses
 from .app import app
 
 @app.route("/")
-def lista():
-    return render_template(
-        "base.html"
-    )
+def login():
+    return render_template("login.html")
