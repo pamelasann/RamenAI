@@ -13,6 +13,12 @@
 }
 
 .container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.background{
     background-image: url('../img/BG.jpg');
     background-size: cover;
     width: 100vw;
