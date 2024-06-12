@@ -1,15 +1,15 @@
 ## Set up
-1. Después de clonar el repositorio, entra a la carpeta de RamenIA
+1. Después de clonar el repositorio, entra a la carpeta de RamenAI
 ```
-cd LearnIA
+cd RamenAI
 ```
 2. Se debería de ver una organización así, siendo la primer carpeta RamenIA donde se clonó el repositorio.
 ```
-C:\Users\John\Documents\Code\RamenIA\RamenIA>
+C:\Users\John\Documents\Code\RamenAI\RamenAI>
 ```
 3. Entra a la carpeta del proyecto.
 ```
-C:\Users\John\Documents\Code\RamenIA\RamenIA\RamenIA>
+C:\Users\John\Documents\Code\RamenAI\RamenAI\RamenAI>
 ```
 4. Crea un ambiente virtual
 ```
