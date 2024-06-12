@@ -27,7 +27,7 @@ poetry install
 ```
 cd ..
 ```
-7. Regresa a la carpeta principal del repositorio.
+8. Corre la aplicación en modo debug.
 ```
 ./RamenAI/.venv/Scripts/flask --debug --app RamenAI.main run
 ```
