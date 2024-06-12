@@ -12,13 +12,16 @@ from .app import app
 
     return wrapped_view """
 
+
 @app.get("/login")
 def login_get():
     return render_template("login.html")
 
+
 @app.post("/login")
 def login_post():
-    return redirect(url_for('chat', _method="GET"))
+    return redirect(url_for("chat", _method="GET"))
+
 
 @app.route("/")
 def chat():
