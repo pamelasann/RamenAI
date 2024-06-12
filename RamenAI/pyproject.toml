@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "ramenai"
+version = "0.1.0"
+description = "Un experto de ramen para tu conveniencia"
+authors = ["Sara Vargas <157633346+SVA-BL00@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Flask = "^3.0.3"
+secure = "^0.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+pytest-cov = "^5.0.0"
+pylint = "^3.2.3"
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
