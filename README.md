@@ -31,3 +31,13 @@ cd ..
 ```
 ./RamenAI/.venv/Scripts/flask --debug --app RamenAI.main run
 ```
+### Herramientas de desarrollo
+Corre el formatter de RamenAI
+```
+./RamenAI/.venv/Scripts/black ./
+```
+Corre el linter de RamenAI
+```
+cd RamenAI
+.venv/Scripts/pylint .
+```
