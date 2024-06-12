@@ -3,7 +3,6 @@ name = "ramenai"
 version = "0.1.0"
 description = "Un experto de ramen para tu conveniencia"
 authors = ["Sara Vargas <157633346+SVA-BL00@users.noreply.github.com>"]
-readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
