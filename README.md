@@ -33,3 +33,11 @@ Corre el linter de RamenAI
 cd ramenai
 ../.venv/Scripts/pylint .
 ```
+Corre pruebas de unidad
+```
+./.venv/Scripts/pytest
+```
+Para ver el coverage y qué líneas aún no se prueban
+```
+.venv/Scripts/pytest --cov --cov-report term-missing
+```
