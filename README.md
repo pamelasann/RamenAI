@@ -7,11 +7,7 @@ cd RamenAI
 ```
 C:\Users\John\Documents\Code\RamenAI\RamenAI>
 ```
-3. Entra a la carpeta del proyecto.
-```
-C:\Users\John\Documents\Code\RamenAI\RamenAI\RamenAI>
-```
-4. Crea un ambiente virtual
+2. Crea un ambiente virtual
 ```
 py -3 -m venv .venv
 ```
@@ -23,21 +19,17 @@ py -3 -m venv .venv
 ```
 poetry install
 ```
-7. Regresa a la carpeta principal del repositorio.
-```
-cd ..
-```
 8. Corre la aplicación en modo debug.
 ```
-./RamenAI/.venv/Scripts/flask --debug --app RamenAI.main run
+.venv/Scripts/flask --debug --app ramenai.main run
 ```
 ### Herramientas de desarrollo
 Corre el formatter de RamenAI
 ```
-./RamenAI/.venv/Scripts/black ./
+.venv/Scripts/black ./
 ```
 Corre el linter de RamenAI
 ```
-cd RamenAI
-.venv/Scripts/pylint .
+cd ramenai
+../.venv/Scripts/pylint .
 ```
