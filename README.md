@@ -23,3 +23,11 @@ py -3 -m venv .venv
 ```
 poetry install
 ```
+7. Regresa a la carpeta principal del repositorio.
+```
+cd ..
+```
+7. Regresa a la carpeta principal del repositorio.
+```
+./RamenAI/.venv/Scripts/flask --debug --app RamenAI.main run
+```
