@@ -8,6 +8,10 @@ authors = ["Sara Vargas <157633346+SVA-BL00@users.noreply.github.com>"]
 python = "^3.11"
 Flask = "^3.0.3"
 secure = "^0.3.0"
+flask-cors = "^4.0.1"
+pymongo = "^4.7.3"
+openai = "^1.34.0"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
