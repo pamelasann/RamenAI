@@ -1,6 +1,7 @@
 from . import app
 import secure
 import os
+from flask import Flask
 from dotenv import load_dotenv
 
 load_dotenv()
