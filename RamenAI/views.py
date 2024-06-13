@@ -1,3 +1,5 @@
+"""Views backend."""
+
 import datetime
 import functools
 import os
@@ -12,6 +14,8 @@ init_db()
 
 
 def login_required(view):
+    """Log in functool that can be reused in any view."""
+
     @functools.wraps(view)
     def wrapped_view(**kwargs):
         if "user" not in session:
@@ -25,17 +29,20 @@ def login_required(view):
 
 @app.get("/login")
 def login_get():
+    """Log in get method."""
     return render_template("login.html")
 
 
 @app.post("/login")
 def login_post():
+    """Log in post method."""
     redirect_uri = url_for("authorized", _external=True)
     return google.authorize_redirect(redirect_uri)
 
 
 @app.route("/logout")
 def logout():
+    """Log out."""
     session.pop("user", None)
     print(session)
     flash("Has cerrado sesión exitosamente")
@@ -45,6 +52,7 @@ def logout():
 @app.route("/")
 @login_required
 def chat():
+    """Index route that includes chat."""
     return render_template("chat.html")
 
 
@@ -54,13 +62,17 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 conversation_history = [
     {
         "role": "system",
-        "content": "Eres un excelente cocinero y experto en ramen. Eres bueno en descubrir e inventar nuevas formas de preparar y disfrutar ramen en casa. Das recetas sencillas e instrucciones concisas. Siempre contesta en máximo 500 tokens.",
+        "content": """
+        Eres un excelente cocinero y experto en ramen. Eres bueno en descubrir e inventar nuevas formas de preparar y disfrutar ramen en casa. 
+        Das recetas sencillas e instrucciones concisas. Siempre contesta en máximo 500 tokens.
+        """,
     }
 ]
 
 
 @app.route("/api/maruchat", methods=["POST"])
 def maruchat():
+    """API post to get maruchat."""
     try:
         db = get_db()
         conversations_collection = db["conversations"]
