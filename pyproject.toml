@@ -8,6 +8,9 @@ authors = ["Sara Vargas <157633346+SVA-BL00@users.noreply.github.com>"]
 python = "^3.11"
 Flask = "^3.0.3"
 secure = "^0.3.0"
+authlib = "^1.3.1"
+python-dotenv = "^1.0.1"
+requests = "^2.32.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"

@@ -1,16 +1,19 @@
-from flask import render_template, request, redirect, url_for, abort, flash, session, g
+import functools
+from flask import render_template, redirect, url_for, flash, session
 from .app import app
+from .auth import google
 
-""" def login_required(view):
+
+def login_required(view):
     @functools.wraps(view)
     def wrapped_view(**kwargs):
-        if 'uid' not in session:
+        if "user" not in session:
             flash("Por favor ingresa a sesión")
-            return redirect(url_for('login_get'))
+            return redirect(url_for("login_get"))
 
         return view(**kwargs)
 
-    return wrapped_view """
+    return wrapped_view
 
 
 @app.get("/login")
@@ -20,9 +23,17 @@ def login_get():
 
 @app.post("/login")
 def login_post():
-    return redirect(url_for("chat", _method="GET"))
+    redirect_uri = url_for("authorized", _external=True)
+    return google.authorize_redirect(redirect_uri)
+
+
+@app.route("/logout")
+def logout():
+    session.pop("user", None)
+    return redirect(url_for("chat"))
 
 
 @app.route("/")
+@login_required
 def chat():
     return render_template("chat.html")
