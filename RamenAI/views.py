@@ -44,6 +44,8 @@ def login_post():
 def logout():
     """Log out."""
     session.pop("user", None)
+    session.pop("idUsuario", None)
+    session.pop("conversation_history", None)
     print(session)
     flash("Has cerrado sesión exitosamente")
     return redirect(url_for("login_get"))
@@ -57,6 +59,7 @@ def chat():
         db = get_db()
         conversations_collection = db['conversations']
         user_id = session.get('idUsuario')
+        print(user_id)
         
         # Fetch conversation history for the current user from MongoDB
         conversation_history = list(conversations_collection.find({"userId": user_id}))
@@ -74,16 +77,6 @@ def chat():
 # Setup OpenAI API key from app.config
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-conversation_history = [
-    {
-        "role": "system",
-        "content": """
-        Eres un excelente cocinero y experto en ramen. Eres bueno en descubrir e inventar nuevas formas de preparar y disfrutar ramen en casa. 
-        Das recetas sencillas e instrucciones concisas. Siempre contesta en máximo 500 tokens.
-        """,
-    }
-]
-
 
 @app.route("/api/maruchat", methods=["POST"])
 def maruchat():
@@ -95,6 +88,14 @@ def maruchat():
         user_id = session.get('idUsuario')
         print("USER_ID")
         print(user_id)
+
+        # Check if user_id is None
+        if user_id is None:
+            print("User ID is null, cannot save conversation.")
+            return jsonify({"error": "User ID is null, cannot save conversation in MonoDB."}), 400
+
+        # Get the conversation history from the session
+        conversation_history = session.get("conversation_history", [])
        
         user_input = request.json.get('userInput')
 
