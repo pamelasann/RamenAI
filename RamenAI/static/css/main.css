@@ -12,10 +12,30 @@
     --title: "Signika Negative", sans-serif;
 }
 
-.container{
+.flash-cont{
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(122, 232, 140);
+    border: 2px solid rgb(0, 173, 0);
     width: 100vw;
+}
+
+.alert{
+    list-style-type: none;
+    padding: 1em;
+    text-align: center;
+    color: rgb(3, 95, 3);
+}
+
+body{
     height: 100vh;
+    width: 100vw;
+}
+
+.container{
+    position: relative;
     display: flex;
+    flex-direction: column;
 }
 
 .background{
