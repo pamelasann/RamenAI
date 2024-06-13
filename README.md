@@ -35,7 +35,7 @@ cd ramenai
 ```
 Corre pruebas de unidad
 ```
-./.venv/Scripts/pytest
+.venv/Scripts/pytest
 ```
 Para ver el coverage y qué líneas aún no se prueban
 ```
