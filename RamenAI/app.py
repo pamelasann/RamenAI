@@ -1,18 +1,25 @@
-from . import app
-import secure
 import os
 from flask import Flask
 from dotenv import load_dotenv
+from flask_cors import CORS
+from authlib.integrations.flask_client import OAuth
+import secure
+
 
 load_dotenv()
 
-secure_headers = secure.Secure(server=secure.Server())
 
 app = Flask(__name__, instance_relative_config=True)
 app.secret_key = os.urandom(24)
-""" app.config.from_object("defaults")
-app.config.from_envvar("RAMEN_CONFIG", silent=True) """
 
+
+app.config['OPENAI_API_KEY'] = os.getenv('OPENAI_API_KEY')
+app.config['MONGO_URI'] = os.getenv('MONGO_URI')
+
+
+secure_headers = secure.Secure(server=secure.Server())
+
+CORS(app)
 
 
 @app.after_request
@@ -21,17 +28,12 @@ def set_secure_headers(response):
     return response
 
 
-from authlib.integrations.flask_client import OAuth
-
 oauth = OAuth(app)
 
 google = oauth.register(
     name="google",
     client_id=os.getenv("GOOGLE_CLIENT_ID"),
     client_secret=os.getenv("GOOGLE_CLIENT_SECRET"),
-    # access_token_url='https://accounts.google.com/o/oauth2/token',
     server_metadata_url="https://accounts.google.com/.well-known/openid-configuration",
-    # authorize_url='https://accounts.google.com/o/oauth2/auth',
     client_kwargs={"scope": "openid profile email"},
-    # userinfo_endpoint='https://openidconnect.googleapis.com/v1/userinfo'
 )

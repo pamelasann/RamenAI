@@ -7,6 +7,8 @@ import datetime
 import functools
 import os
 from pymongo import MongoClient
+from .db import init_db
+init_db()
 
 
 def login_required(view):
