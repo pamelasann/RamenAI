@@ -1,8 +1,9 @@
 from pymongo import MongoClient
 from .app import app
+import os
 
 def get_db():
-    client = MongoClient(app.config['MONGO_URI'])
+    client = MongoClient(os.getenv('MONGO_URI'))
     return client['maruchat']
 
 def init_db():

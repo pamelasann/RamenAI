@@ -5,6 +5,7 @@ from .auth import google
 import openai
 import datetime
 import functools
+import os
 from pymongo import MongoClient
 
 
@@ -44,7 +45,7 @@ def chat():
 
 
 # Setup OpenAI API key from app.config
-openai.api_key = app.config['OPENAI_API_KEY']
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 conversation_history = [
     {"role": "system", "content": "Eres un excelente cocinero y experto en ramen. Eres bueno en descubrir e inventar nuevas formas de preparar y disfrutar ramen en casa. Das recetas sencillas e instrucciones concisas. Siempre contesta en máximo 500 tokens."}
@@ -91,5 +92,5 @@ def maruchat():
 
 def get_db():
     # Placeholder for database connection
-    client = MongoClient(app.config['MONGO_URI'])
+    client = MongoClient(os.getenv('MONGO_URI'))
     return client['your_database_name'] 

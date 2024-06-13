@@ -19,5 +19,6 @@ def auth_logout():
 def authorized():
     token = google.authorize_access_token()
     session["user"] = token["userinfo"]["name"]
+    print(token["userinfo"])
     print(session["user"])
     return redirect(url_for("chat"))
