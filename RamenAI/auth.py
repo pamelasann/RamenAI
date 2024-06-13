@@ -1,6 +1,6 @@
+from authlib.jose import jwt
 from flask import redirect, url_for, session
 from .app import app, google
-from authlib.jose import jwt
 
 
 @app.route("/auth/login/authorized")
