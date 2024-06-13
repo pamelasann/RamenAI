@@ -1,13 +1,12 @@
 from flask import render_template, request, redirect, url_for, flash, session, jsonify
 from .app import app
-from .db import get_db
+from .db import get_db, init_db 
 from .auth import google
 import openai
 import datetime
 import functools
 import os
 from pymongo import MongoClient
-from .db import init_db
 init_db()
 
 
