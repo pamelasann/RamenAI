@@ -1,6 +1,7 @@
-from flask import Flask, Response
+from . import app
 import secure
 import os
+from flask import Flask
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -12,7 +13,6 @@ app.secret_key = os.urandom(24)
 """ app.config.from_object("defaults")
 app.config.from_envvar("RAMEN_CONFIG", silent=True) """
 
-secure_headers = secure.Secure(server=secure.Server())
 
 
 @app.after_request
