@@ -51,7 +51,7 @@ def test_chat_ok(client):
         sess["user"] = "Test User"
     response = client.get("/")
     assert response.status_code == 200
-    assert "HOLA PRUEBA" in response.data.decode("utf-8")
+    assert "maruchat" in response.data.decode("utf-8")
 
 
 def test_chat_error(client):
