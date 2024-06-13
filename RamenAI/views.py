@@ -30,7 +30,9 @@ def login_post():
 @app.route("/logout")
 def logout():
     session.pop("user", None)
-    return redirect(url_for("chat"))
+    print(session)
+    flash("Has cerrado sesión exitosamente")
+    return redirect(url_for("login_get"))
 
 
 @app.route("/")

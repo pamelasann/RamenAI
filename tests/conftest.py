@@ -10,6 +10,9 @@ from ramenai.app import app as appli
 @pytest.fixture
 def app():
     # Aqui database
+    appli.config["SERVER_NAME"] = "127.0.0.1:5000"
+    appli.config["APPLICATION_ROOT"] = "/"
+    appli.config["PREFERRED_URL_SCHEME"] = "http"
     appli.testing = True
     yield appli
 
