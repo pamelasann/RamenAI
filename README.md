@@ -1,3 +1,20 @@
+# Integración de un LLM en una arquitectura por microservicios.
+
+En este proyecto se implementó una arquitectura de microservicios integrando un LLM en Flask.
+
+
+
+
+# Docker
+
+
+
+
+
+
+
+# Abrir el proyecto de forma local
+
 ## Set up
 1. Después de clonar el repositorio, entra a la carpeta de RamenAI
 ```
