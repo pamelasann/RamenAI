@@ -15,7 +15,13 @@ RamenAI consiste en un chatbot enfocado a entusiastas del ramen. El chat genera 
 
 ## Diagramas 
 
+### Diagrama de la Arquitectura
 
+<img src="./previewImages/arquitectura.png" alt="Main Menu" width=450 height=500>
+
+### Diagrama Entidad Relación de Bases de Datos
+
+<img src="./previewImages/diagramaED.png" alt="Main Menu" width=450 height=150>
 
 
 # Guía de despliegue de Docker
@@ -43,6 +49,12 @@ Paso 3: Desplegar la Arquitectura con Docker Compose
 ```
 docker-compose up --build
 ```
+
+# RamenAI
+
+<img src="./previewImages/login.png" alt="Main Menu" width=750 height=400>
+<img src="./previewImages/chat.png" alt="Main Menu" width=750 height=400>
+
 
 # Abrir el proyecto de forma local (branch main)
 
