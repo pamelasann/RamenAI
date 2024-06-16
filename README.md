@@ -1,22 +1,62 @@
 # Integración de un LLM en una arquitectura por microservicios.
 
-En este proyecto se implementó una arquitectura de microservicios integrando un LLM en Flask.
+## Descripción
+
+En este proyecto se implementó una arquitectura de microservicios integrando un LLM en Flask. El proyecto consta de los siguientes microservicios:
+
+- Servicio de autenticacion:
+- Servicio de chat:
+
+Adicionalmente, durante el desarrollo del proyecto se buscó que la arquitectura cumpliera con los cuatro atributos de calidad esenciales: modificabilidad, comprobabilidad, seguridad y capacidad de despliegue, que serán detallados más adelante.
+
+### RamenAI
+
+RamenAI consiste en un chatbot enfocado a entusiastas del ramen. El chat genera recomendaciones y diferentes recetas de acuerdo a tus gustos y basado en el historial de conversaciones pasadas de cada usuario.
+
+## Diagramas 
 
 
 
 
-# Docker
+# Guía de despliegue de Docker
 
+### Prerequisitos
 
+- Docker
+- MongoDB uri
 
+1. Clonar el repositorio, entra a la carpeta de RamenAI (clonar branch *OneContainer*)
+```
+git clone 
+cd RamenAI
+```
+Paso 2: Crear el Archivo .env
+```
+OPENAI_API_KEY = "your_api_key"
+MONGO_URI = "your_mongodb_uri"
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+MYSQL_USER=your_sql_usesr
+MYSQL_PASSWORD=your_password
+MYSQL_DB=ramenAI
+```
+Paso 3: Desplegar la Arquitectura con Docker Compose
+```
+docker-compose up --build
+```
 
+# Abrir el proyecto de forma local (branch main)
 
+### Prerequisitos
 
+- Python
+- MySQL (server local)
+- MongoDB uri
+- *Los siguientes pasos son basados en el main*
 
-# Abrir el proyecto de forma local
 
 ## Set up
-1. Después de clonar el repositorio, entra a la carpeta de RamenAI
+1. Después de clonar el repositorio desde la branch **main**, entra a la carpeta de RamenAI
 ```
 cd RamenAI
 ```
