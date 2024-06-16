@@ -25,9 +25,8 @@ RamenAI consiste en un chatbot enfocado a entusiastas del ramen. El chat genera 
 - Docker
 - MongoDB uri
 
-1. Clonar el repositorio, entra a la carpeta de RamenAI (clonar branch *OneContainer*)
+1. Clonar el repositorio (clonar branch *OneContainer*), entra a la carpeta de RamenAI 
 ```
-git clone 
 cd RamenAI
 ```
 Paso 2: Crear el Archivo .env
