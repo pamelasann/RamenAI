@@ -4,8 +4,8 @@
 
 En este proyecto se implementó una arquitectura de microservicios integrando un LLM en Flask. El proyecto consta de los siguientes microservicios:
 
-- Servicio de autenticacion:
-- Servicio de chat:
+- Servicio de autenticacion
+- Servicio de chat
 
 Adicionalmente, durante el desarrollo del proyecto se buscó que la arquitectura cumpliera con los cuatro atributos de calidad esenciales: modificabilidad, comprobabilidad, seguridad y capacidad de despliegue, que serán detallados más adelante.
 
@@ -31,7 +31,7 @@ RamenAI consiste en un chatbot enfocado a entusiastas del ramen. El chat genera 
 - Docker
 - MongoDB uri
 
-1. Clonar el repositorio (clonar branch *OneContainer*), entra a la carpeta de RamenAI 
+Paso 1: Clonar el repositorio (clonar branch *OneContainer*), entra a la carpeta de RamenAI 
 ```
 cd RamenAI
 ```
