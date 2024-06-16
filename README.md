@@ -42,9 +42,6 @@ OPENAI_API_KEY = "your_api_key"
 MONGO_URI = "your_mongodb_uri"
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
-MYSQL_USER=your_sql_usesr
-MYSQL_PASSWORD=your_password
-MYSQL_DB=ramenAI
 ```
 Paso 3: Desplegar la Arquitectura con Docker Compose
 ```
